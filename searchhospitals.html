@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Hospitals</title>
+<style>
+  body {
+    background-image: url("/Images/map1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Background color */
+  }
+
+  .container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Box shadow */
+  }
+
+  h1 {
+    margin-top: 20px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  button {
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  .gohome-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f44336; /* Red color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .gohome-button:hover {
+    background-color: #d32f2f; /* Darker red color on hover */
+  }
+</style>
+</head>
+<body onload="getLocation()">
+  <div class="container">
+    <h1>Find Hospitals Near You</h1>
+
+    <input type="text" id="locationInput" placeholder="Enter Your Location">
+
+    <button onclick="searchHospitals()">Search</button>
+    <button class="gohome-button" onclick="goHome()">Go Home</button>
+
+    <script>
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          alert("Geolocation is not supported by this browser.");
+        }
+      }
+
+      function showPosition(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var locationInput = document.getElementById("locationInput");
+        locationInput.value = latitude + "," + longitude;
+      }
+
+      function searchHospitals() {
+        var locationInput = document.getElementById("locationInput").value;
+        
+        if (locationInput !== "") {
+          console.log("Searching hospitals near: " + locationInput);
+          // Here you would perform a search for hospitals near the provided location
+          // You can use APIs like Google Places API or other location-based services
+          // to implement this functionality
+        } else {
+          alert("Please enter your location.");
+        }
+      }
+
+      function goHome() {
+        window.location.href = "mainpage.html"; // Change "index.html" to the URL of your home page
+      }
+    </script>
+  </div>
+</body>
+</html>

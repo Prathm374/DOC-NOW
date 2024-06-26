@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicine Order Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #ffffff;
+      padding: 20px 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      float: left;
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .nav-links {
+      float: right;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+    }
+
+    h1 {
+      margin-top: 50px;
+    }
+
+    .medicine-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .medicine {
+      width: calc(33.33% - 20px);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .medicine img {
+      width: 100%;
+      height: 200px; /* Set a fixed height for all images */
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .order-btn {
+      display: inline-block;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+
+    .order-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <h1 class="logo">DOC-NOW</h1>
+    <ul class="nav-links">
+      <li><a href="mainpage.html">Home</a></li>
+      <li><a href="contactus.html">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>Order Medicines</h1>
+  <div class="medicine-container">
+    <div class="medicine">
+      <img src="Images/para.jpg" alt="Medicine 1">
+      <h3>Medicine 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <a href="#" class="order-btn">Order Now</a>
+    </div>
+    <div class="medicine">
+      <img src="Images/all.jpg" alt="Medicine 2">
+      <h3>Medicine 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <a href="#" class="order-btn">Order Now</a>
+    </div>
+    <div class="medicine">
+      <img src="Images/HIMAL.jpg" alt="Medicine 3">
+      <h3>Medicine 3</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <a href="#" class="order-btn">Order Now</a>
+    </div>
+    <div class="medicine">
+      <img src="Images/cap.jpg"  alt="Medicine 4" height="280 px">
+      <h3>Medicine 4</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <a href="#" class="order-btn">Order Now</a>
+    </div>
+    <div class="medicine">
+      <img src="Images/chest.jpg" alt="Medicine 5">
+      <h3>Medicine 5</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <a href="#" class="order-btn">Order Now</a>
+    </div>
+    <div class="medicine">
+      <img src="Images/pantop.jpg" alt="Medicine 6">
+      <h3>Medicine 6</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <a href="#" class="order-btn">Order Now</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

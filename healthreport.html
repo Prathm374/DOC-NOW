@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Passport</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .passport-info {
+            margin-bottom: 20px;
+        }
+        .passport-info label {
+            font-weight: bold;
+        }
+        .button-container {
+            text-align: center;
+        }
+        .button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Health Passport</h1>
+        
+        <div class="passport-info">
+            <label for="name">Name:</label>
+            <span id="name">John Doe</span>
+        </div>
+        
+        <div class="passport-info">
+            <label for="dob">Date of Birth:</label>
+            <span id="dob">January 1, 1980</span>
+        </div>
+        
+        <div class="passport-info">
+            <label for="blood-type">Blood Type:</label>
+            <span id="blood-type">A+</span>
+        </div>
+        
+        <div class="passport-info">
+            <label for="vaccination-status">Vaccination Status:</label>
+            <span id="vaccination-status">Fully vaccinated</span>
+        </div>
+        
+        <div class="passport-info">
+            <label for="covid-test-status">COVID-19 Test Status:</label>
+            <span id="covid-test-status">Negative (PCR Test, February 20, 2024)</span>
+        </div>
+        
+        <div class="button-container">
+            <button class="button" onclick="printPassport()">Print Passport</button>
+            <button class="button"><a href="landing.html">Home</a></button>
+            <button class="button"><a href="mainpage.html">Back</a></button>
+        </div>
+    </div>
+
+    <script>
+        function printPassport() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

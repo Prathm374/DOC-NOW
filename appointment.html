@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Appointment Form</title>
+  <style>
+    body {
+      background-image: url("Images/1.jpg");
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px 0;
+      margin: 0;
+      background-color: #007bff;
+      color: #fff;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    form {
+      padding: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    textarea {
+      width: calc(100% - 20px);
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .radio-group label {
+      display: inline-block;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    button[type="submit"],
+    button[type="button"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button[type="submit"]:hover,
+    button[type="button"]:hover {
+      background-color: #0056b3;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hospital Appointment Form</h1>
+    <form action="submit.php" method="POST" id="appointmentForm" onsubmit="return validateForm()">
+      <div class="form-group">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required placeholder="Enter Your Name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter Your Email">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required placeholder="Enter Your Phone No.">
+      </div>
+      <div class="form-group">
+        <label for="appointment_date">Preferred Appointment Date:</label>
+        <input type="date" id="appointment_date" name="appointment_date" required>
+      </div>
+      <div class="form-group">
+        <label for="time_slot">Select Time Slot:</label>
+        <input type="time" name="time_slot" id="time_slot" required><br><br>
+      </div>
+      <div class="form-group">
+        <label for="hospital">Select Hospital:</label>
+        <select name="hospital" id="hospital" required>
+          <option value="">Select Hospital</option>
+          <option value="Hospital 1">Hospital 1</option>
+          <option value="Hospital 2">Hospital 2</option>
+          <option value="Hospital 3">Hospital 3</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="doctor">Preferred Doctor:</label>
+        <select name="doctor" id="doctor" required>
+          <option value="">Select Doctor</option>
+          <option value="Doctor 1">Doctor 1</option>
+          <option value="Doctor 2">Doctor 2</option>
+          <option value="Doctor 3">Doctor 3</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="additional_info">Describe Your Condition In Brief:</label>
+        <textarea id="additional_info" name="additional_info" rows="4"></textarea>
+      </div>
+      <button type="submit">Submit Appointment Request</button>
+      <button type="button"><a href="mainpage.html" id="home">Go Home</a></button>
+    </form>
+  </div>
+</body>
+<script>
+  function validateForm() {
+    var fullname = document.getElementById('fullname').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+    var appointment_date = document.getElementById('appointment_date').value;
+    var time_slot = document.getElementById('time_slot').value;
+    var hospital = document.getElementById('hospital').value;
+    var doctor = document.getElementById('doctor').value;
+
+    if (fullname.trim() === "") {
+      alert("Please enter your full name.");
+      return false;
+    }
+
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return false;
+    }
+
+    var phonePattern = /^\d{10}$/;
+    if (!phonePattern.test(phone)) {
+      alert("Please enter a valid 10-digit phone number.");
+      return false;
+    }
+
+    if (appointment_date.trim() === "") {
+      alert("Please select your preferred appointment date.");
+      return false;
+    }
+
+    if (time_slot.trim() === "") {
+      alert("Please select your preferred time slot.");
+      return false;
+    }
+
+    if (hospital.trim() === "") {
+      alert("Please select the hospital.");
+      return false;
+    }
+
+    if (doctor.trim() === "") {
+      alert("Please select the doctor.");
+      return false;
+    }
+
+    return true;
+  }
+</script>
+</html>
