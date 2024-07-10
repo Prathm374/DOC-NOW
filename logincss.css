@@ -6,7 +6,7 @@
 }
 body {
   display: flex;
-  background-image: url("/Images/background\ hd.png");
+  background-image: url("/Images/background hd.png");
   align-items: center;
   min-height: 80vh;
   background-color: #dcf2f1;
